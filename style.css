@@ -1,0 +1,277 @@
+/* General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+}
+/* Grid Layout */
+.container {
+    display: grid;
+    grid-template-columns: 250px 1fr 2fr; /* Sidebar, Email List, Email Details */
+    grid-template-rows: auto 1fr; /* Single row */
+    grid-template-areas: 
+    "sidebar search details"
+    "sidebar list details";
+    width: 100%;
+    max-width: 1200px;
+    height: 90vh;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba( 0, 0,0,0.1);
+    overflow: hidden;
+}
+/* Sidebar */
+.sidebar {
+    grid-area: sidebar;
+    background-color: #ff4081;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;  
+}
+.profile {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.profile-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.sidebar h1 {
+    font-size: 16px;
+}
+.compose-button {
+    background-color: #ffa500;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+.menu {
+    list-style: none;
+}
+.menu li {
+    margin:10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #ff80ab;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3 ease, transform 0.3;
+}
+.menu li :hover {
+  background-color: #ff4081;  
+}
+/* Search Bar */
+.search-bar {
+    grid-area: search;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #00acc1;
+
+}
+.search-input {
+    width: 85%;
+    height: 20px;
+    padding: 20px;
+    font-size: 14px;
+    border: 2px solid #cccccc;
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: 0 3px 6px rgba( 0, 0,0,0.1);
+}
+
+/* Email List */
+
+.email-list {
+    grid-area: list;
+    padding: 20%;
+    background-color: #e3f2fd;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: transform 0.2s, background-color 0.2;
+    box-shadow: 0 1px 3px rgba( 0, 0,0,0.1);
+}
+.email-item {
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #bbdefb;
+    margin-bottom: 10px;
+    transition: transform 0.2, background-color 0.2;
+    box-shadow: 0 1px 3px rgba( 0, 0,0,0.1);
+}
+.email-item:hover {
+    background-color: #90caf9;
+    transform: scale(1.02);
+}
+.email-item h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+.email-item p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    color: #666666;
+}
+
+/* Email Details  Section*/
+
+.email-details {
+    grid-area: details;
+    padding: 20px;
+    background-color: #f9fbe7;
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba( 0, 0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.email-details p {
+    font-size: 16px;
+    color: #424242;
+    line-height: 1.5; /* Better text readability */
+
+}
+/* Textarea (Reply Box) Styling */
+
+.reply-box {
+    width: 100%;
+    height: 100px;
+    border-radius: 5px;
+    border: 1px solid #8bc34a;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #ffffff;
+    box-sizing: inset 0 2px 4px rgba(0,0,0,0.1 );
+}
+ /* Send  Button Styling */
+
+ .send-button {
+    width: 150px;
+    padding: 10px;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #ff5722;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3 ease;
+ }
+ /* Media Layout */
+ @media screen and (max-width:768px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        padding: 10px;
+        height: auto;
+        overflow: hidden;
+    }
+    .sidebar {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .menu li {
+        font-size: 18px;
+        margin: 8px 0;
+        padding: 12px;
+        background-color: #ff80ab;
+        border-radius: 8px;
+    }
+    .compose-button {
+        background-color: #ffc107;
+        color: white;
+        font-weight: bold;
+        margin-bottom: 10px;
+        border-radius: 8px;
+        padding: 10px;
+        font-size: 18px;
+    }
+    .search-bar {
+        width: 95%;
+        margin: 0 auto;
+        padding: 10px;
+        text-align: center;
+    }
+    .search-input {
+        width: 100%;
+        font-size: 20px;
+        padding: 10px;
+    }
+    .email-list {
+        width: 100%;
+        padding: 10px;
+        background-color: #e3f2fd;
+        border-radius: 8px;
+        margin-bottom: 10px;
+    }
+    .email-item {
+        margin-bottom: 10px;
+        padding: 15px;
+        border-radius: 8px;
+        background-color: #bbdefb;
+    }
+    .email-details {
+        width: 100%;
+        padding: 15px;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        font-size: 16px;
+        margin-top: 10px;
+
+    }
+    .reply-box {
+        width: 100%;
+        height: 80px;
+        margin-top: 10px;
+        padding: 15px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-size: 16px;
+        resize: vertical;
+    }
+    .send-button {
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+        background-color: #ff5733;
+        border: none;
+        border-radius: 5px;
+        margin-top: 10px;
+        cursor: pointer;
+    }
+    .send-button:hover {
+        background-color: #ff2e00;
+    }
+
+    
+    
+ }
+
+
+
+
+
+
